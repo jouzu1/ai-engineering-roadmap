@@ -1,0 +1,52 @@
+# Core data/ML
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+scikit-learn>=1.4
+
+# Notebooks
+jupyterlab>=4.2
+ipykernel>=6.29
+
+# API & App
+fastapi>=0.112
+uvicorn[standard]>=0.30
+pydantic>=2.8
+python-dotenv>=1.0
+streamlit>=1.36
+
+# Deep Learning & NLP
+# Catatan: Paket Torch cukup besar. Ini akan memasang versi CPU secara default.
+# Jika ingin GPU NVIDIA, ikuti panduan di docs/01-setup.md (gunakan index-url CUDA).
+torch>=2.3
+torchvision>=0.18
+torchaudio>=2.3
+transformers>=4.43
+datasets>=2.20
+accelerate>=0.33
+sentencepiece>=0.1.99
+sentence-transformers>=2.7
+
+# RAG / LLM tooling
+langchain>=0.2.10
+langchain-community>=0.2.10
+langchain-openai>=0.1.17
+faiss-cpu>=1.8.0
+tiktoken>=0.7.0
+
+# MLOps
+mlflow>=2.14
+dvc>=3.55
+joblib>=1.4
+
+# Utilities
+rich>=13.7
+loguru>=0.7
+pyyaml>=6.0.1
+
+# Dev tools (CI/CD, quality)
+black>=24.8
+ruff>=0.5
+isort>=5.13
+pytest>=8.3
