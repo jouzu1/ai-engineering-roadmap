@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-and-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Hindari memasang seluruh requirements (torch/faiss berat). Linting cukup pakai dev tools.
+      - name: Install dev tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff black isort
+
+      - name: Ruff lint
+        run: ruff check ai-engineering-roadmap
+
+      - name: Black format check
+        run: black --check ai-engineering-roadmap
+
+      - name: isort import order check
+        run: isort --check-only ai-engineering-roadmap
+
+      # Kompilasi bytecode untuk cek sintaks tanpa mengeksekusi file
+      - name: Python syntax check
+        run: python -m compileall -q ai-engineering-roadmap

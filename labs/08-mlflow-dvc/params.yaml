@@ -1,0 +1,14 @@
+train:
+  random_state: 42
+  n_samples: 1500
+  test_size: 0.2
+  model: "RandomForestRegressor"  # opsi lain: "LinearRegression"
+  rf:
+    n_estimators: 300
+    max_depth: null
+
+data:
+  # Jika ingin pakai data nyata, isi path relatif ke repo root, mis:
+  # input_csv: "ai-engineering-roadmap/datasets/processed/housing_clean.csv"
+  input_csv: ""
+  target: "price"

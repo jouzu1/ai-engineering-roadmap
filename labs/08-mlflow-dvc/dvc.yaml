@@ -1,0 +1,10 @@
+stages:
+  train:
+    cmd: python train.py --params params.yaml
+    deps:
+      - train.py
+      - params.yaml
+    outs:
+      - ../../models/model.joblib
+    metrics:
+      - metrics.json
